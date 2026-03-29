@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma Muhleman - Portfolio Manager & Macro Strategist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Root Variables */
+        :root {
+            --navy: #1a2332;
+            --charcoal: #2d3e50;
+            --gold: #d4a574;
+            --light-gold: #e8c9a8;
+            --text-light: #f0f0f0;
+            --text-muted: #b0b0b0;
+            --accent: #c9a961;
+            --bg-dark: #0f1419;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--navy);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.5rem; margin-bottom: 2rem; }
+        h3 { font-size: 1.5rem; }
+
+        a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--light-gold);
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(26, 35, 50, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--navy) 100%);
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .designations {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0 2rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: rgba(212, 165, 116, 0.1);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border: 2px solid var(--gold);
+            background-color: transparent;
+            color: var(--gold);
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            background-color: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--navy);
+            border-color: var(--gold);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--light-gold);
+            border-color: var(--light-gold);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 2rem;
+        }
+
+        section.alternate {
+            background-color: var(--charcoal);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .highlight {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* Research & Media Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: rgba(212, 165, 116, 0.05);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            background-color: rgba(212, 165, 116, 0.1);
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.1);
+        }
+
+        .card h3 {
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .card-meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* Financial Models Section */
+        .model-card {
+            text-align: center;
+        }
+
+        .model-card .btn {
+            margin-top: 1rem;
+            width: 100%;
+            justify-content: center;
+            opacity: 0.6;
+            cursor: not-allowed;
+            border-color: var(--text-muted);
+            color: var(--text-muted);
+        }
+
+        .model-card .btn:hover {
+            background-color: transparent;
+            color: var(--text-muted);
+        }
+
+        .coming-soon {
+            display: inline-block;
+            background-color: var(--text-muted);
+            color: var(--navy);
+            padding: 0.25rem 0.75rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Career Timeline */
+        .timeline {
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 0;
+            }
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .timeline-item:nth-child(even) > div {
+            direction: ltr;
+        }
+
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            background-color: var(--gold);
+            border: 3px solid var(--navy);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+
+            .timeline-item:nth-child(even) {
+                direction: ltr;
+            }
+
+            .timeline-dot {
+                left: 0;
+            }
+        }
+
+        .timeline-content {
+            background-color: rgba(212, 165, 116, 0.05);
+            border-left: 2px solid var(--gold);
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .timeline-content h4 {
+            color: var(--gold);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-content .role {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Education & Certifications */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .education-card {
+            background-color: rgba(212, 165, 116, 0.05);
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .education-card h4 {
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .detail {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Media Section */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .media-card {
+            background-color: rgba(212, 165, 116, 0.05);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .media-card:hover {
+            background-color: rgba(212, 165, 116, 0.1);
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .media-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), rgba(212, 165, 116, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+        }
+
+        .media-content {
+            padding: 1.5rem;
+        }
+
+        .media-content h3 {
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .media-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            border-top: 1px solid rgba(212, 165, 116, 0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-contact {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-contact a {
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+
+        .footer-copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.8rem; }
+            h3 { font-size: 1.2rem; }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .designations {
+                gap: 0.5rem;
+            }
+
+            .hero-buttons {
+                gap: 0.5rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Smooth transitions */
+        * {
+            transition-property: background-color, border-color, color;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">EM</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#models">Models</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Emma Muhleman</h1>
+            <p class="subtitle">Portfolio Manager & Global Macro Strategist</p>
+            <div class="designations">
+                <span class="badge">CFA</span>
+                <span class="badge">CPA</span>
+                <span class="badge">CQF</span>
+                <span class="badge">CIRA</span>
+            </div>
+            <p>Chief Macro Strategist at Ascend Investment Management. 11+ years in global macro, PE/VC, equity research. Published author. Fox Business contributor.</p>
+            <div class="hero-buttons">
+                <a href="https://linkedin.com/in/emmamuhleman" class="btn" target="_blank">LinkedIn</a>
+                <a href="mailto:emmamuhleman1@gmail.com" class="btn btn-primary">Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="alternate" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About</h2>
+            </div>
+            <div class="about-content">
+                <p><span class="highlight">Chief Macro Strategist and Portfolio Manager at Ascend Investment Management LLC</span>, a $1.2B AUM hedge fund focused on global macro and special situations investing.</p>
+                <p>With <span class="highlight">11+ years in investment management</span>, Emma brings deep expertise across global macro, special situations, private equity/venture capital consulting, and equity research. She is a regular contributor to Fox Business's "Making Money with Charles Payne" and is an active participant in the investment community.</p>
+                <p>Emma holds an <span class="highlight">MS in Data Science from NYU</span> (specializing in Computer Science and Mathematical Optimization, GPA 3.8) and an <span class="highlight">MS in Accounting & Finance plus Master of Taxation from Notre Dame's Mendoza College of Business</span>. She is a CFA charterholder, CPA, Certificate in Quantitative Finance (CQF) holder, and Certified Insolvency & Restructuring Advisor (CIRA).</p>
+                <p>A published author with <span class="highlight">17,000+ LinkedIn followers</span>, Emma's research and commentary focus on macro drivers, market technicals, and complex financial structures in global markets.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Published Research Section -->
+    <section id="research">
+        <div class="container">
+            <div class="section-header">
+                <h2>Published Research</h2>
+                <p>Original market analysis and investment theses</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Chinese Stocks: Caveat Emptor</h3>
+                    <p class="card-meta">Luckbox Magazine, March 2020 — Special China Edition Cover Story</p>
+                    <p>Front-page headline feature exposing the complex web of Variable Interest Entity (VIE) structures used by major Chinese companies like Alibaba, Tencent, and Baidu to attract Western capital without offering true equity ownership. Published alongside General Robert Spalding, former U.S. Defense Attaché to China.</p>
+                </div>
+                <div class="card">
+                    <h3>Sell Avigilon</h3>
+                    <p class="card-meta">Seeking Alpha, April 2016</p>
+                    <p>Short thesis on AVO CN identifying significant financial engineering concerns and structural inability to generate sustainable cash flow. Stock declined 99.9% post-publication.</p>
+                </div>
+                <div class="card">
+                    <h3>The Distillery</h3>
+                    <p class="card-meta">Real Vision Think Tank, 2018 — 13 Editions</p>
+                    <p>Weekly macro investment research reports for Real Vision's premium Think Tank service ($2,000/year subscription). Comprehensive analysis covering global macro drivers, market technicals, and cross-asset insights including rates, FX, commodities, and equities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section class="alternate" id="media">
+        <div class="container">
+            <div class="section-header">
+                <h2>Media & Public Speaking</h2>
+                <p>Regular media appearances and conference presentations</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Fox Business "Making Money"</h3>
+                    <p class="card-meta">Regular Contributor</p>
+                    <p>Frequent guest commentator on Fox Business's "Making Money with Charles Payne," discussing market trends, macro analysis, and investment strategy for a national audience.</p>
+                </div>
+                <div class="card">
+                    <h3>TradeTech FX 2025</h3>
+                    <p class="card-meta">Speaker</p>
+                    <p>Speaker at TradeTech FX 2025, North America's premier buy-side FX conference, presenting on macro strategies and foreign exchange market dynamics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Models Section -->
+    <section id="models">
+        <div class="container">
+            <div class="section-header">
+                <h2>Financial Models</h2>
+                <p>Institutional-grade valuation and analysis frameworks</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card model-card">
+                    <h3>Leveraged Buyout (LBO) Model</h3>
+                    <p>Complete LBO analysis with real transaction data, sensitivity analysis, and multiple return scenarios.</p>
+                    <button class="btn">
+                        Download
+                        <span class="coming-soon">Coming Soon</span>
+                    </button>
+                </div>
+                <div class="card model-card">
+                    <h3>Merger & Acquisition (M&A) Model</h3>
+                    <p>Full merger model with accretion/dilution analysis, pro forma financials, and deal impact scenarios.</p>
+                    <button class="btn">
+                        Download
+                        <span class="coming-soon">Coming Soon</span>
+                    </button>
+                </div>
+                <div class="card model-card">
+                    <h3>Three-Statement Financial Model</h3>
+                    <p>Integrated financial model with DCF, comparable company multiples, and transaction multiples valuation.</p>
+                    <button class="btn">
+                        Download
+                        <span class="coming-soon">Coming Soon</span>
+                    </button>
+                </div>
+                <div class="card model-card">
+                    <h3>ASC 820 Fair Value / Option Pricing</h3>
+                    <p>Enterprise value allocation across complex capital structures using Black-Scholes OPM methodology. Template became Deloitte's national standard for ASC 820 compliance.</p>
+                    <button class="btn">
+                        Download
+                        <span class="coming-soon">Coming Soon</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Section -->
+    <section class="alternate" id="career">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Background</h2>
+                <p>Investment management and financial analysis career</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div>
+                        <div class="timeline-content">
+                            <h4>Ascend Investment Management LLC</h4>
+                            <p class="role">Global Macro Strategist & Portfolio Manager (2016–Present)</p>
+                            <p>Chief investment strategist and portfolio manager at $1.2B AUM global macro hedge fund.</p>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="timeline-item">
+                    <div></div>
+                    <div>
+                        <div class="timeline-content">
+                            <h4>Impact Shares</h4>
+                            <p class="role">Co-Portfolio Manager, NYSE: WOMN (2022)</p>
+                            <p>Co-managed gender-inclusive ETF with focus on ESG investing principles.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div>
+                        <div class="timeline-content">
+                            <h4>ROTH Capital Partners</h4>
+                            <p class="role">Independent Consultant, PE/VC (2014–2016)</p>
+                            <p>Provided valuation and investment analysis for private equity and venture capital transactions.</p>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="timeline-item">
+                    <div></div>
+                    <div>
+                        <div class="timeline-content">
+                            <h4>Allianz Global Investors</h4>
+                            <p class="role">Research Analyst (2013–2014)</p>
+                            <p>Equity research and portfolio analysis for global investment strategies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div>
+                        <div class="timeline-content">
+                            <h4>Pacific View Asset Management</h4>
+                            <p class="role">Research Analyst, Global Small-Cap Equities (2012–2013)</p>
+                            <p>Fundamental equity research across international small-cap markets.</p>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="timeline-item">
+                    <div></div>
+                    <div>
+                        <div class="timeline-content">
+                            <h4>Deloitte</h4>
+                            <p class="role">Valuation Services (Earlier Career)</p>
+                            <p>Valuation analysis and ASC 820 fair value assessments for complex transactions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education & Certifications</h2>
+                <p>Academic credentials and professional designations</p>
+            </div>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h4>NYU Stern School of Business</h4>
+                    <p>MS Data Science</p>
+                    <p class="detail">Specialization: Computer Science & Mathematical Optimization</p>
+                    <p class="detail">GPA: 3.8</p>
+                </div>
+                <div class="education-card">
+                    <h4>Notre Dame Mendoza College of Business</h4>
+                    <p>MS Accounting & Finance</p>
+                    <p class="detail">Master of Taxation</p>
+                </div>
+                <div class="education-card">
+                    <h4>Professional Certifications</h4>
+                    <p>CFA Charterholder (2012)</p>
+                    <p class="detail">CPA</p>
+                    <p class="detail">Certificate in Quantitative Finance (CQF)</p>
+                    <p class="detail">Certified Insolvency & Restructuring Advisor (CIRA)</p>
+                </div>
+                <div class="education-card">
+                    <h4>Test Scores</h4>
+                    <p>GMAT: 750</p>
+                    <p class="detail">Demonstrates strong quantitative and analytical reasoning skills</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Footer Section -->
+    <section class="alternate" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Connect with Emma</p>
+            </div>
+            <footer style="background: transparent; border: none; padding: 0;">
+                <div class="footer-content">
+                    <div class="footer-contact">
+                        <a href="mailto:emmamuhleman1@gmail.com">Email: emmamuhleman1@gmail.com</a>
+                        <br>
+                        <a href="https://linkedin.com/in/emmamuhleman" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+    <!-- True Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-copyright">&copy; 2026 Emma Muhleman. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active nav link highlight
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.style.color = 'var(--gold)';
+                } else {
+                    link.style.color = 'var(--text-light)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
