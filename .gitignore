@@ -7,3 +7,15 @@ node_modules/
 *.log
 dist/
 build/
+
+# Local preview / tooling artifacts
+.playwright-mcp/
+portfolio-desktop-*.png
+portfolio-mobile-*.png
+
+# CQF Final Project — only the compiled report PDF is published.
+# Source code, notebooks, data, and LaTeX source stay private.
+optimal_hedging_local_vol_model_mvd/*
+!optimal_hedging_local_vol_model_mvd/reports/
+optimal_hedging_local_vol_model_mvd/reports/*
+!optimal_hedging_local_vol_model_mvd/reports/final_report.pdf
