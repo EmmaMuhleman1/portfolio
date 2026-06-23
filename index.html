@@ -298,6 +298,48 @@
     color: var(--accent-soft);
   }
 
+  /* Media list */
+  .media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 28px;
+  }
+  .media-item {
+    display: block;
+    text-decoration: none;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    transition: color .2s ease;
+  }
+  .media-item:last-child { border-bottom: none; }
+  .media-item .media-title {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--ink);
+    line-height: 1.28;
+    margin-bottom: 0.25rem;
+  }
+  .media-item:hover .media-title { color: var(--accent); }
+  .media-item .media-meta {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .media-item .media-meta .arrow { color: var(--accent); margin-left: 0.5em; }
+  .sub-label {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0.4rem 0 0.6rem;
+  }
+  .sub-label + .media-grid { margin-bottom: 1.4rem; }
+
   /* Quant block — minimal one-row */
   .quant-row {
     display: flex;
@@ -334,6 +376,7 @@
   /* ─── Responsive: mobile (stack columns) ─── */
   @media (max-width: 900px) {
     body { padding: 12px; }
+    .media-grid { grid-template-columns: 1fr; gap: 0; }
     .page-inner {
       grid-template-columns: 1fr;
       gap: 32px;
@@ -461,6 +504,43 @@
           <a class="news-card" href="published%20weekly%20newsletter%20samples/RV_ThinkTank_WeeklyNewsletter_4.25.pdf" target="_blank" rel="noopener">
             <span class="news-date">April 25</span>
             <span class="news-arrow">View PDF →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Media & appearances -->
+      <section class="block">
+        <p class="eyebrow">Media &amp; Appearances</p>
+
+        <p class="sub-label">Fox Business · “Making Money” with Charles Payne</p>
+        <div class="media-grid">
+          <a class="media-item" href="https://www.youtube.com/watch?v=lHPIRP1GfAo" target="_blank" rel="noopener">
+            <div class="media-title">The Palantir call &amp; asymmetric downside hedging</div>
+            <div class="media-meta">Sept 2025<span class="arrow">Watch →</span></div>
+          </a>
+          <a class="media-item" href="https://www.youtube.com/watch?v=ogwgazfeBj0" target="_blank" rel="noopener">
+            <div class="media-title">Investment ideas across equities &amp; macro</div>
+            <div class="media-meta">May 2022<span class="arrow">Watch →</span></div>
+          </a>
+          <a class="media-item" href="https://www.youtube.com/watch?v=n2WKw5InHd8" target="_blank" rel="noopener">
+            <div class="media-title">Energy policy &amp; the structural shortage in hydrocarbons</div>
+            <div class="media-meta">Aug 2022<span class="arrow">Watch →</span></div>
+          </a>
+          <a class="media-item" href="https://www.youtube.com/watch?v=OU4izpCYv7g" target="_blank" rel="noopener">
+            <div class="media-title">Markets &amp; macro outlook on “Making Money”</div>
+            <div class="media-meta">June 2023<span class="arrow">Watch →</span></div>
+          </a>
+        </div>
+
+        <p class="sub-label">Podcasts</p>
+        <div class="media-grid">
+          <a class="media-item" href="https://www.youtube.com/watch?v=sSV2cINn2Q8" target="_blank" rel="noopener">
+            <div class="media-title">Futures Edge, Ep. 22 — “The Fed Knew Exactly What They Were Doing”</div>
+            <div class="media-meta">Aug 2022<span class="arrow">Watch →</span></div>
+          </a>
+          <a class="media-item" href="https://creators.spotify.com/pod/show/bobby215/episodes/Gold-as-an-Inflation-Hedge-A-Debate-with-Emma-Muhleman-CFA--CPA-e2ieafj" target="_blank" rel="noopener">
+            <div class="media-title">Futures Edge — “Gold as an Inflation Hedge: A Debate”</div>
+            <div class="media-meta">2024<span class="arrow">Listen →</span></div>
           </a>
         </div>
       </section>
