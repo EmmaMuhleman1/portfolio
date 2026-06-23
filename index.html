@@ -216,6 +216,14 @@
   }
   .grid-2 .item { padding: 0; }
 
+  /* Stock picks: 3-column grid */
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .grid-3 .item { padding: 0; }
+
   .head-sm {
     font-family: 'Newsreader', Georgia, serif;
     font-weight: 600;
@@ -342,6 +350,7 @@
     }
     .lh-mark { display: none; }
     .grid-2 { grid-template-columns: 1fr; gap: 24px; }
+    .grid-3 { grid-template-columns: 1fr; gap: 24px; }
     .grid-4 { grid-template-columns: repeat(2, 1fr); }
     .footer-band { padding: 14px 28px; flex-direction: column; align-items: flex-start; gap: 0.4rem; }
   }
@@ -410,12 +419,19 @@
 
       <!-- Stock picks -->
       <section class="block">
-        <p class="eyebrow">Published Stock Picks<span class="sep">·</span>Seeking Alpha Editor's Picks</p>
-        <div class="grid-2">
+        <p class="eyebrow">Published Stock Picks<span class="sep">·</span>Seeking Alpha Editor's Picks &amp; Luckbox</p>
+        <div class="grid-3">
           <div class="item">
             <h3 class="head-sm">Buy: Mylan (MYL)</h3>
             <p class="meta">Editor's Pick</p>
+            <p class="desc-sm">Long thesis on the generics maker. Immediate post-publication outperformance.</p>
             <a class="pdf-link" href="stock%20picks%20-%20SA%20Premium/SA_Buy%20MYL.pdf" target="_blank" rel="noopener">View PDF →</a>
+          </div>
+          <div class="item">
+            <h3 class="head-sm">Buy: Amazon (AMZN) — Prime Numbers</h3>
+            <p class="meta">Luckbox<span class="sep">·</span>June 2021</p>
+            <p class="desc-sm">Sum-of-the-parts long thesis crediting AWS's moat; $4,600 December 2021 price target.</p>
+            <a class="pdf-link" href="stock%20picks%20-%20SA%20Premium/SA_Buy%20AMZN%20-%20Prime%20Numbers.pdf" target="_blank" rel="noopener">View PDF →</a>
           </div>
           <div class="item">
             <h3 class="head-sm">Sell: Avigilon — Financial Engineering Masks Lack of Actual Cash Flow</h3>
